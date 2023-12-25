@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Detail</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            color: #080808;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            order: -1;
+        }
+        .details-container {
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 20px;
+            width: 50%;
+            text-align: left;
+        }
+        .details-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>CV Detail</h1>
+
+<div class="details-container">
+    <p><strong>Name:</strong> {{ cv.first_name }} {{ cv.last_name }}</p>
+    <p><strong>Email:</strong> {{ cv.email }}</p>
+    <p><strong>Phone Number:</strong> {{ cv.phone_number }}</p>
+    <p><strong>Address:</strong> {{ cv.address }}</p>
+    <p><strong>Education:</strong> {{ cv.education }}</p>
+    <p><strong>Experience:</strong> {{ cv.experience }}</p>
+    <p><strong>Skills:</strong> {{ cv.skills }}</p>
+    <!-- Add more fields as needed -->
+</div>
+
+</body>
+</html>

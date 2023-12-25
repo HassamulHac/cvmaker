@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            color: #fff;
+        }
+        h1 {
+            color: #fdfcfc;
+            text-align: center;
+            margin-bottom: 20px;
+            order: -1;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            color: #000;  /* Set the text color to black */
+        }
+        li:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            margin-left: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        strong {
+            color: #000;  /* Set the color to black */
+        }
+    </style>
+</head>
+<body>
+
+<h1>CV List</h1>
+
+<ul>
+    {% for cv in cvs %}
+        <li>
+            <strong>{{ cv.first_name }} {{ cv.last_name }}</strong> - {{ cv.email }}
+            <a href="{% url 'cv_detail' cv.id %}">Details</a>
+            <a href="{% url 'delete_cv' cv.id %}">Delete</a>
+            <!-- Add other CV details as needed -->
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
